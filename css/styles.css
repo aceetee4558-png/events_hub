@@ -1,0 +1,165 @@
+/* FILE: css/styles.css — shared by all Events Hub pages */ body { font-family: "Segoe UI", Arial, sans-serif; margin: 0; color: #1e293b; background: #f8fafc;
+} header { background: #0f172a; color: white; padding: 16px 24px; } nav a { color: #7dd3fc; margin-right: 12px; text-decoration: none; } footer { background: #0f172a; color: #e2e8f0; padding: 16px 24px; margin-top: 40px; } main { padding: 24px; }
+
+/* =========================================================
+   FILE: css/styles.css
+   Shared stylesheet for the JNEC Events Hub (Practical III)
+   Loaded AFTER Bootstrap + Font Awesome on every page so that
+   these rules can override the framework defaults where needed.
+   ========================================================= */
+
+/* ---------- Part A: base layout ---------- */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  color: #1e293b;
+  background: #f8fafc;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+header {
+  background: #0f172a;
+  color: white;
+  padding: 16px 24px;
+}
+
+nav a {
+  color: #7dd3fc;
+  margin-right: 12px;
+  text-decoration: none;
+  display: inline-block;   /* Part E: nav links behave like padded pills */
+  padding: 8px 16px;
+}
+
+footer {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 16px 24px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+main {
+  padding: 24px;
+}
+
+/* ---------- Part B: selectors ---------- */
+
+/* B1 - simple selectors */
+h1 { color: #0f172a; }                 /* element */
+.intro { background: #ffffff; }        /* class */
+#welcome { padding: 24px; }            /* id */
+p.intro { font-size: 1.05rem; }        /* element.class */
+h1, h2, h3 { font-family: Georgia, serif; } /* grouping */
+
+/* B2 - combinator selectors */
+main > section { margin-bottom: 24px; }     /* child */
+h2 + p { font-style: italic; }              /* adjacent sibling */
+h2 ~ p { color: #334155; }                  /* general sibling */
+
+/* B3 - pseudo-class selectors */
+nav a:hover { color: #38bdf8; }
+input:focus, textarea:focus, select:focus { outline: 2px solid #0369a1; }
+input:checked + label { font-weight: 700; }
+tr:nth-child(even) { background: #f1f5f9; }
+
+/* Anchor LVHA order */
+a:link { color: #0369a1; }
+a:visited { color: #7c3aed; }
+a:hover { color: #0ea5e9; }
+a:active { color: #b91c1c; }
+
+/* B4 - pseudo-element selectors */
+p::first-line { font-weight: bold; }
+.intro p::first-letter {
+  font-size: 1.6em;
+  color: #0369a1;
+}
+h2::before { content: "\2605  "; color: #d97706; } /* star bullet */
+li::marker { color: #059669; }
+::selection { color: #7f1d1d; background: #fde68a; }
+
+/* B5 - attribute selectors */
+a[target="_blank"] { color: #d97706; }
+input[type="file"] { border: 1px dashed #94a3b8; padding: 8px; border-radius: 4px; }
+input[type="text"] { border: 1px solid #cbd5e1; padding: 8px; border-radius: 4px; }
+
+/* ---------- Part C: text formatting & colour ---------- */
+h1 { font-size: 2rem; font-weight: 700; }
+h2 { font-size: 1.5rem; text-align: left; }
+em { font-style: italic; }
+
+.hero-title {
+  letter-spacing: 0.04em;
+  word-spacing: 0.1em;
+}
+
+.intro p {
+  text-indent: 2em;
+  text-align: justify;
+}
+
+.sold-out {
+  text-decoration: line-through;
+  text-decoration-color: #ef4444;
+  text-decoration-style: solid;
+}
+
+body { color: rgb(30, 41, 59); }   /* RGB */
+h2 { color: #0369a1; }             /* hexadecimal */
+.highlight { color: crimson; }     /* named */
+header { background-color: #0f172a; }
+
+/* ---------- Part D: margin & padding (box model) ---------- */
+.intro {
+  margin: 24px 16px 32px 16px; /* top right bottom left */
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 8px;
+}
+
+section {
+  margin-bottom: 28px;
+  padding-left: 8px;
+}
+
+/* ---------- Part E: display properties ---------- */
+.admin-only { display: none; }
+.badge-inline { display: inline; }
+.event-card { display: block; }
+
+/* ---------- Bootstrap-friendly extras ---------- */
+.card.event-card {
+  transition: transform 0.15s ease-in-out;
+}
+.card.event-card:hover {
+  transform: translateY(-4px);
+}
+.card-img-top {
+  height: 190px;
+  object-fit: cover;
+}
+.map-frame {
+  border: 4px solid #0f172a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.map-frame iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+
+/* Responsive images */
+img { max-width: 100%; height: auto; }
+
+/* ---------- Part F: media query ---------- */
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+    margin: 4px 0;
+  }
+  body { font-size: 15px; }
+}
