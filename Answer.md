@@ -8,7 +8,7 @@
 
 **Q4.** Calling `console.log(b)` outside the `if { let b = 2; }` block throws `ReferenceError: b is not defined`. This proves `let` is block-scoped — the variable only exists inside the `{ }` it was declared in and is destroyed once that block ends. `typeof null` is `"object"` (a well-known historical JavaScript quirk).
 
-**Q5.** Changing Inter-College Football's `seats` from `0` to `5` and reloading: the card's `sold-out-card` styling (strikethrough title, reduced opacity) disappears, the badge switches from grey "Sold out" to green "5 seats", the message changes to "Filling fast!", and the "No seats left" text is replaced with a working green **Register** button linking to `register.html?event=3`.
+**Q5.** Changing Inter-College Football's `seats` from `0` to `5` and reloading: the card's `sold-out-card` styling (strikethrough title, reduced opacity) disappears, the badge switches from grey "Sold out" to green "5 seats", the message changes to "Filling fast!", and the "No seats left" text is replaced with a working blue **Register** button linking to `register.html?event=3`.
 
 **Q6.** `seatsMessage(0)` returns `"Sold out"`. `seatsMessage(12)` returns `"Filling fast!"` (since 12 is greater than 0 but not greater than 20).
 
